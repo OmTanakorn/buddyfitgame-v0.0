@@ -70,7 +70,7 @@ function onResultsPose(results) {
     const nose = Object.values(POSE_LANDMARKS_NEUTRAL)
         .map(index => results.poseLandmarks[index])
     nose_y = nose[0].y
-    console.log(nose_y)
+    // console.log(nose_y)
 
     if(nose_y <= 0.5) {
         stage = "UP"
@@ -78,7 +78,7 @@ function onResultsPose(results) {
     if(nose_y > 0.7 && stage == "UP") {
         stage = "DOWN"
         counter += 1
-        console.log(counter)
+        // console.log(counter)
     }
 
     canvasCtx.font = "30px Arial"
