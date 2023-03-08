@@ -14,6 +14,7 @@ spinner.ontransitionend = () => {
 let nose_y = 0.5
 let stage = "UP"
 let counter = 0
+let count = 0
 
 function zColor(data) {
     const z = clamp(data.from.z + 0.5, 0, 1)
@@ -74,17 +75,22 @@ function onResultsPose(results) {
 
     if(nose_y <= 0.5) {
         stage = "UP"
+        count = 0
     }
     if(nose_y > 0.7 && stage == "UP") {
         stage = "DOWN"
+        count = 1
         counter += 1
         // console.log(counter)
     }
+    console.log(count)
 
     canvasCtx.font = "30px Arial"
     canvasCtx.fillStyle = "red"
     canvasCtx.fillText(stage + ": " + counter.toString(), 320, 50)
     canvasCtx.restore()
+
+    return count
 }
 
 const pose = new Pose({

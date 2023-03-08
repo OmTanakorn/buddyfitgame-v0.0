@@ -10,9 +10,12 @@
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils@0.1/control_utils.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.2/drawing_utils.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose@0.2/pose.js" crossorigin="anonymous"></script>
+  <script src="./js/phaser.js"></script>
 </head>
 
 <body>
+
+  <script src="./js/MainGame.js"></script>
   <!-- BULMA NAVBAR -->
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
@@ -70,6 +73,18 @@
           </p>
           <div class="panel-block">
             <!-- WEBCAM INPUT -->
+            <script>
+              var config = {
+                  type : Phaser.AUTO,
+                  width : 1280,
+                  height : 720,
+                  physics : {
+                      default : "arcade",
+                  },
+                  scene : [ MainGame]
+              }
+              var game = new Phaser.Game(config);
+            </script>
             <video class="input_video" style="visibility: hidden"></video>            
           </div>
         </article>
