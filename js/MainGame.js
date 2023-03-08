@@ -49,7 +49,7 @@ class MainGame extends Phaser.Scene {
         this.platformGroup = this.add.group();
         this.addPlatform(1000, 10, 600, 1);
 
-        this.player = this.physics.add.sprite(200, 500, 'player');
+        this.player = this.physics.add.sprite(200, 100, 'player');
         this.player.setScale(1.5, 1.5);
         this.player.setGravityY(800);
 
@@ -57,16 +57,6 @@ class MainGame extends Phaser.Scene {
         this.physics.add.collider(this.player, this.platformGroup);
 
         this.playerJumps = 0;
-        if(count == 1) {
-            if(this.player.body.touching.down) {
-                this.playerJumps = 0;
-            }
-            
-            if(this.playerJumps >= 0 && this.playerJumps < 2) {
-                this.player.setVelocityY(-400);
-                this.playerJumps++;
-            }
-        }
         // this.input.on("pointerdown", () => {
         //     if(this.player.body.touching.down) {
         //         this.playerJumps = 0;
@@ -106,5 +96,34 @@ class MainGame extends Phaser.Scene {
             let platformWidth = Phaser.Math.Between(100, 500);
             this.addPlatform(platformWidth, 1280, 600 ,Phaser.Math.Between(1, 3));
         }
-    }
+
+        if(count == 1){
+            console.log(count);
+            if(this.player.body.touching.down) {
+                this.playerJumps = 0;
+            }        
+            if(this.playerJumps >= 0 && this.playerJumps < 2) {
+                this.player.setVelocityY(-400);
+                this.playerJumps++;
+                count++;
+            }
+        }
+    }    
 }
+
+const config = {
+    type : Phaser.AUTO,
+    scale : {
+    // parent : "CanvasDiv",
+    mode: Phaser.Scale.FIT,
+    // autoCenter : Phaser.Scale.CENTER_BOTH,
+    width : 1080,
+    height : 720,
+    // isPortrait : true
+    },
+    physics : {
+    default : "arcade",
+    },
+    scene : [ MainGame ]
+}
+const ame = new Phaser.Game(config)
