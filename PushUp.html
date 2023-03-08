@@ -50,19 +50,6 @@
   <div class="container" style="margin-top: 20px;">
 
     <div class="columns">
-      
-      <!-- WEBCAM INPUT -->
-      <div class="column">
-        <article class="panel is-info">
-          <p class="panel-heading">
-            Webcam Input
-          </p>
-          <div class="panel-block">
-            <video class="input_video"></video>
-          </div>
-        </article>
-      </div>
-
       <!-- MEDIAPIPE OUTPUT -->
       <div class="column">
         <article class="panel is-info">
@@ -74,12 +61,25 @@
           </div>
         </article>
       </div>
+
+      <!-- GAME MONITOR -->
+      <div class="column">
+        <article class="panel is-info">
+          <p class="panel-heading">
+            Game Monitor
+          </p>
+          <div class="panel-block">
+            <!-- WEBCAM INPUT -->
+            <video class="input_video" style="visibility: hidden"></video>            
+          </div>
+        </article>
+      </div>
     </div>
     
     <div class="loading">
       <div class="spinner"></div>
     </div>
-    <div style="visibility: hidden;" class="control">
+    <div style="visibility: hidden" class="control">
   </div>
 
   <script type="text/javascript" src="./js/PushUp.js"></script>

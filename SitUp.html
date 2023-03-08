@@ -52,29 +52,31 @@
 
     <div class="columns">
       
-      <!-- WEBCAM INPUT -->
-      <div class="column">
-        <article class="panel is-info">
-          <p class="panel-heading">
-            Webcam Input
-          </p>
-          <div class="panel-block">
-            <video class="input_video"></video>
-          </div>
-        </article>
-      </div>
+        <!-- MEDIAPIPE OUTPUT -->
+        <div class="column">
+          <article class="panel is-info">
+            <p class="panel-heading">
+              Mediapipe Pose Detection
+            </p>
+            <div class="panel-block">
+              <canvas class="output" width="480px" height="480px"></canvas>
+            </div>
+          </article>
+        </div>
+  
+        <!-- GAME MONITOR -->
+        <div class="column">
+          <article class="panel is-info">
+            <p class="panel-heading">
+              Game Monitor
+            </p>
+            <div class="panel-block">
+              <!-- WEBCAM INPUT -->
+              <video class="input_video" style="visibility: hidden"></video>            
+            </div>
+          </article>
+        </div>
 
-      <!-- MEDIAPIPE OUTPUT -->
-      <div class="column">
-        <article class="panel is-info">
-          <p class="panel-heading">
-            Mediapipe Pose Detection
-          </p>
-          <div class="panel-block">
-            <canvas class="output" width="480px" height="480px"></canvas>
-          </div>
-        </article>
-      </div>
     </div>
     
     <div class="loading">

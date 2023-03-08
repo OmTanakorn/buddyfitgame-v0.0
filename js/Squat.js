@@ -93,7 +93,7 @@ function onResultsPose(results) {
   if(angle < 100 && stage == "UP") {
     stage = "DOWN"
     counter += 1
-    console.log(counter)
+    // console.log(counter)
   }
 
   canvasCtx.font = "30px Arial"
