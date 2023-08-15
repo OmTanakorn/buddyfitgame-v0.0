@@ -73,7 +73,7 @@ function onResultsPose(results) {
     nose_y = nose[0].y
     // console.log(nose_y)
 
-    if(nose_y <= 0.5) {
+    if(nose_y <= 0.6) {
         stage = "UP"
         count = 0
     }

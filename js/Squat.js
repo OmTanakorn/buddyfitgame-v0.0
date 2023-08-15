@@ -13,6 +13,7 @@ spinner.ontransitionend = () => {
 let angle = 0.0
 let stage = "UP"
 let counter = 0
+let count = 0
 
 function zColor(data) {
   const z = clamp(data.from.z + 0.5, 0, 1)
@@ -89,11 +90,15 @@ function onResultsPose(results) {
 
   if(angle > 140) {
     stage = "UP"
+    count = 0
   }
   if(angle < 100 && stage == "UP") {
     stage = "DOWN"
+    count = 1
     counter += 1
-    // console.log(counter)
+    count = 0
+    
+    console.log(counter)
   }
 
   canvasCtx.font = "30px Arial"

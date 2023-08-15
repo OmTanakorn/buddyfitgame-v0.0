@@ -69,16 +69,16 @@ class MainGame extends Phaser.Scene {
         // });
 
         //BGM
-        this.bgm = this.sound.add('bgm');
-        this.bgm.play({loop:true});
+        // this.bgm = this.sound.add('bgm');
+        // this.bgm.play({loop:true});
     }
 
     update(time, delta) {
         this.player.x = 200;
 
         if(this.player.y > 720) {
-            this.bgm.stop();
-            this.sound.stopAll();
+            // this.bgm.stop();
+            // this.sound.stopAll();
             this.scene.start("MainGame");
         }
         let minDistance = 1280;
