@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.1/camera_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/control_utils@0.1/control_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.2/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose@0.2/pose.js" crossorigin="anonymous"></script>
+  <script src="./js/phaser.js"></script>
+  
+  
+</head>
+
+<style>
+  
+  .Conten {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .Videoconten, .gameconten {
+    flex: 1;
+    padding: 10px;
+  }
+</style>
+<body>
+  <div class="Conten">
+    <div class="Videoconten"> <!-- สลับตำแหน่ง -->
+      <canvas class="output" width="500" height="500px"></canvas>
+      <video class="input_video" width="0px" height="0px"></video>
+      <div style="visibility: hidden" class="control"></div>
+      <div class="loading"></div>
+      <div class="spinner"></div>
+    </div>
+    
+    <div class="gameconten" id="gameContainer"> <!-- สลับตำแหน่ง -->
+      <script src="./js/MainGame.js"></script>
+      <script>
+        var config = {
+          type : Phaser.AUTO,
+          scale : {
+            parent : "gameContainer",
+            width : 500,
+            height : 500,
+          },
+          physics : {
+            default : "arcade",
+          },
+          scene : [ MainGame ]
+        }
+        var game = new Phaser.Game(config)
+      </script>
+    </div>
+  </div>
+  <script type="text/javascript" src="./js/PushUp.js"></script>
+</body>
+</html>
